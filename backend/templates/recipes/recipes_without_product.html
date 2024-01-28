@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+    <title>Recipes Without Product</title>
+</head>
+<body>
+    <h1>В таблице ниже показаны все рецепты, в которых {{ product.name }} отсутствует или присутствует в количестве менее 10 грамм.</h1>   
+    </div>
+    <hr>
+    <table>
+        <tr>
+            <th>id рецепта</th>
+            <th>название рецепта</th>
+        </tr>
+        {% for recipe in recipes.all %}
+        <tr>
+            <th>{{ recipe.id }}</th>
+            <th>{{ recipe.name }}</th>
+        </tr>
+        {% endfor %}
+</body>
+</html>

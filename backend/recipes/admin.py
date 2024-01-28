@@ -25,7 +25,7 @@ class RecipeProductInline(admin.StackedInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = list_display_links = ('name', 'times_used')
+    list_display = list_display_links = ('id', 'name', 'times_used')
     search_fields = ('name',)
     readonly_fields = ('times_used',)
     inlines = (RecipeProductInline,)
@@ -34,7 +34,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Recipe)
 class RecipeAdmin(admin.ModelAdmin):
-    list_display = list_display_links = ('name', 'author')
+    list_display = list_display_links = ('id', 'name', 'author')
     list_filter = ('author',)
     search_fields = ('name',)
     inlines = (RecipeProductInline,)
